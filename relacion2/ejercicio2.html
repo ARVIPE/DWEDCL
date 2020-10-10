@@ -7,9 +7,16 @@
 </head>
 <body>
     <script>
-        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    
+        const numero = [];
+        let suma = 0;
+ 
+        for (i = 0; i < 10; i++){
+             numero[i] = prompt("Escribe un número");
+             suma+=numero;
+        }
 
-        alert(meses);
+        document.write(suma);
     </script>
 </body>
 </html>
