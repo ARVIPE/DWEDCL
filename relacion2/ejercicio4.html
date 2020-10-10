@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+        var array = [6, "pepe", 2, "juan"];
+        var longitudMayor = "";
+        var suma = 0;
+        var resta = 0;
+        var multiplicar = 1;
+        var dividir = 0;
+
+        array.forEach(element => {
+            if (typeof element == "string" && element.length > longitudMayor.length) {
+                longitudMayor = element;
+            }
+
+            if (typeof element == "number") {
+                suma += element;
+                if (resta == 0) {
+                    resta = element;
+                } else {
+                    resta = resta - element;
+                }
+                multiplicar = multiplicar * element;
+                if (dividir == 0) {
+                    dividir = element;
+                } else {
+                    dividir = dividir / element;
+                }
+            }
+        });
+
+        document.write("El de mayor longitud: " + longitudMayor + "\n");
+        document.write("El resultado de la suma es: " + suma + "\n");
+        document.write("El resultado de la resta es: " + resta + "\n");
+        document.write("El resultado de la multiplicación es: " + multiplicar + "\n");
+        document.write("El resultado de la división es: " + dividir + "\n");
+    </script>
+
+</body>
+
+</html>

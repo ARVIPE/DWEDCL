@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="number">
+    <button id="boton" onClick="letraDni()">Insertar numero DNI</button>
+
+    <input type="text" id="letter">
+    <button id="boton1" onClick="comprobarDni()">Comprobar DNI</button>
+
+    <script>
+        
+
+    var letras =  ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+    var numDni;
+    var resto = 0;
+    var letraDelDni;
+
+    function letraDni(){
+    numDni = document.getElementById("number").value;
+    resto = numDni%23;
+    letraDelDni = letras[resto];
+    document.write("El dni: " + numDni + "tiene la letra: " + letraDelDni);     
+    }
+
+    function comprobarDni() {
+            letraDni = document.getElementById("letter").value;
+            numDni = letraDni.slice(0, 8);
+            letraDni = letraDni.slice(8, 9);
+
+            resto = numDni % 23;
+
+            if (letraDni == letras[resto]) {
+                document.write("El DNI es correcto");
+            } else {
+                document.write("El DNI es incorrecto");
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>
