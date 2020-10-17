@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+
+<body>
+
+    <script>
+        let fecha = new Date();
+        let dia = fecha.getDate();
+        let mes = fecha.getMonth();
+        let cuatrimestre = Math.floor((fecha.getMonth() + 4) / 4);
+        let año = fecha.getFullYear();
+
+        document.write("Estamos en el día \n" + dia + "\n del mes\n" + mes + "\ndel\n" + cuatrimestre + "\ncuatrimestre del año\n" + año);
+    </script>
+
+
+</body>
+
+</html>
