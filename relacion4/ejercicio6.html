@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=+, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var cadena = "Hola Mundo";
+        var numeroVocales = cadena.match(/[aeiou]/gi).length;
+        var numeroConsonantes = cadena.match(/[qwrtypsdfghjklñzxvbnm]/gi).length;
+
+        document.write("Numero de vocales:" + numeroVocales + "\n");
+
+        document.write("Numero de consonantes:" + numeroConsonantes);
+    </script>
+
+</body>
+
+</html>

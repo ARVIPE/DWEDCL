@@ -8,13 +8,10 @@
 <body>
     <h1>Ejercicio 1</h1>
     <script>
-           function invertirPalabras (cadena=""){
-    var CadenaUnida=cadena.split("").reverse().join;
-
-    return CadenaUnida;
-}
-console.log(invertirPalabras ("Miguel Angel"));
-
+        const invertirCadena = cadena => cadena.split("").reverse().join("");
+ 
+        var cadena = "Miguel Angel";
+        document.write("Cadena:", invertirCadena(cadena));
     </script>
     
 </body>

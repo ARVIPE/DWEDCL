@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var lista = [389, 703, 247, 563, 224, 714, 464, 953, 708, 201, 887, 550, 515, 206, 131];
+        var ordenadoDesc = [];
+        var ordenadoAsc = [];
+        var n, i, k, aux, m;
+        n = lista.length;
+        document.writeln("Array desordenado: " + lista);
+
+        for (k = 1; k < n; k++) {
+            for (i = 0; i < (n - k); i++) {
+                if (lista[i] > lista[i + 1]) {
+                    aux = lista[i];
+                    lista[i] = lista[i + 1];
+                    lista[i + 1] = aux;
+
+
+
+                }
+
+            }
+            ordenadoDesc.push(lista[i]);
+
+        }
+
+        for (k = 1; k < n; k++) {
+            for (i = 0; i < (n - k); i++) {
+                if (lista[i] < lista[i + 1]) {
+
+                    aux = lista[i + 1];
+                    lista[i + 1] = lista[i];
+                    lista[i] = aux;
+
+
+
+                }
+
+            }
+            ordenadoAsc.push(lista[i]);
+
+        }
+
+
+
+
+
+        document.writeln("</br>Array ordenado de menor a mayor: " + ordenadoAsc);
+        document.writeln("</br>Array ordenado de mayor a menor: " + ordenadoDesc);
+
+    </script>
+
+</body>
+
+</html>

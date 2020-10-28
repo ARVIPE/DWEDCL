@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var a_num = [1, 2, 3, 5, 7, 23];
+
+        //valores max y min
+        var max = Math.max(...a_num);
+        var min = Math.min(...a_num);
+
+        document.writeln("Números máximos: " + max);
+        document.writeln("Números mínimos: " + min);
+
+        var sum = 0; var prom = 0;
+        for (var i = 0; i < a_num.length; i++) {
+            sum += a_num[i];
+        }
+
+    </script>
+</body>
+
+</html>
