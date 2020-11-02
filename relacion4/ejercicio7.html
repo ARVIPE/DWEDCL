@@ -11,19 +11,18 @@
 
     <script>
         var a_num = [1, 2, 3, 5, 7, 23];
+       
 
-        //valores max y min
-        var max = Math.max(...a_num);
-        var min = Math.min(...a_num);
 
-        document.writeln("Números máximos: " + max);
-        document.writeln("Números mínimos: " + min);
-
-        var sum = 0; var prom = 0;
-        for (var i = 0; i < a_num.length; i++) {
-            sum += a_num[i];
+        obtenerMayorNum = (array) => {
+            var array = [];
+            var min = Math.min.apply(null, a_num);
+            var max = Math.max.apply(null, a_num);
+            array.push(min);
+            array.push(max);
+            document.write(array + "<br>");
         }
-
+        obtenerMayorNum(a_num);
     </script>
 </body>
 
