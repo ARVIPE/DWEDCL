@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="cadena"></p>
+    <p id="solucion"></p>
+    <button onclick="eliminarCadena('xyz1, xyz2, xyz3, xyz4 y xyz5', 'xyz');">Borrar</button>
+
+    <script>
+        eliminarCadena = (cadena, subcadena) => {
+
+            document.getElementById("cadena").innerHTML = cadena;
+
+            let eliminar = cadena.replace(new RegExp(subcadena, "gi"), "");
+
+            document.getElementById("solucion").innerHTML = eliminar;
+
+        }
+
+    </script>
+
+    
+</body>
+</html>
