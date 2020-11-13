@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Lorem ipsum dolor sit amet consectetur adipiscing elit molestie mi viverra habitant primis aliquam lobortis eu rutrum, posuere consequat platea blandit ornare donec habitasse aliquet aenean litora eleifend vivamus taciti egestas at. Habitasse phasellus mollis quisque aenean ullamcorper enim parturient convallis non, natoque dui nisi eleifend metus sem dignissim arcu, lectus cursus varius sed sapien nisl tortor lacus. Duis maecenas vitae lacinia mattis eu luctus volutpat porttitor sodales euismod nullam morbi cum per praesent, nisl accumsan dictum felis montes eleifend penatibus litora libero leo curae integer ultrices facilisi.
+        Diam odio dapibus justo sapien tempus nunc purus cum ligula donec, pellentesque morbi iaculis scelerisque inceptos cubilia etiam mus sodales, risus et cras fringilla bibendum ornare ultricies turpis blandit. Nibh bibendum lacus nostra eleifend pulvinar varius nam litora malesuada, porttitor curabitur donec commodo fames consequat magnis id convallis, vitae non eros torquent quam phasellus et inceptos. Sociis ad class faucibus ante mi pulvinar habitant hendrerit, orci litora natoque quis arcu integer accumsan pellentesque facilisis, nec donec ultricies aliquam lacinia scelerisque lectus.</p>
+    
+    
+    <script>
+        function marcar(palabra){
+            var parrafo= document.querySelector("p");
+            if(parrafo.innerHTML.indexOf(palabra) != 1){
+                var apariciones= new RegExp(palabra, "g");
+                parrafo.innerHTML=parrafo.innerHTML.replace(apariciones, '<mark>'+palabra+'</mark>');
+            }
+        }
+        marcar("lacinia");
+    </script>
+
+
+
+</body>
+</html>
