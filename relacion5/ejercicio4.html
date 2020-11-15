@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var followCursor = (function() {
+             var s = document.createElement('div');
+             s.style.position = 'absolute';
+             s.style.margin = '0';
+             s.style.padding = '50px';
+             s.textContent = 'Aquí está el cursor';
+             s.style.textAlign = 'center';
+             s.style.backgroundColor = 'yellow';
+             s.style.border = '1px solid yellow';
+        
+             return {
+               init: function() {
+                 document.body.appendChild(s);
+               },
+        
+               run: function(e) {
+                 var e = e || window.event;
+                 s.style.left  = (e.clientX - 5) + 'px';
+                 s.style.top = (e.clientY - 5) + 'px';
+                
+               }
+             };
+        }());
+        
+        window.onload = function() {
+             followCursor.init();
+             document.body.onmousemove = followCursor.run;
+        }
+        
+        </script>
+        
+        <div style="width: 500px; height: 500px;"></div>
+
+
+</body>
+</html>
