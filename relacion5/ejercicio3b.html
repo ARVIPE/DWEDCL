@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<body>
+
+    <script>
+        function boton() {
+            var texto = prompt("Introduzca el texto");
+            var posicion = prompt("Posición");
+            var lista = document.getElementById("lista");
+            var introduzcaParrafo = document.createElement("li");
+            introduzcaParrafo.innerHTML = texto;
+            lista.appendChild(introduzcaParrafo);
+
+
+            while ((posicion < 1 || posicion > 10 || isNaN(posicion))) {
+
+                posicion = prompt("Posición incorrecta");
+
+            }
+
+            lista.insertBefore(introduzcaParrafo, lista.children[posicion - 1]);
+
+            document.getElementById("cancelar").addEventListener("click", function () {
+                lista.removeChild(introduzcaParrafo);
+            });
+
+
+        }
+
+
+        
+
+
+
+    </script>
+
+
+    <div>
+        <ol id="lista">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eveniet ut distinctio sint beatae. Neque
+                hic, quas dolorem eius id dignissimos ullam rem perferendis aut quia perspiciatis repellat veritatis
+                iure!</li>
+            <li>In tempore obcaecati aspernatur architecto? Ex nobis beatae non enim cum nostrum dolorem reiciendis
+                fuga. Minima laboriosam recusandae assumenda ipsam mollitia officiis quo, magnam, quis, saepe dolores
+                facere in harum.</li>
+            <li>Blanditiis dolorem culpa reiciendis excepturi facere cupiditate, adipisci eaque repudiandae voluptas.
+                Voluptatem nesciunt, cumque exercitationem sed asperiores laudantium deserunt adipisci! Molestiae, non.
+                Minima dolorem veritatis quisquam in nemo, ad quia?</li>
+            <li>Cum dolorum sapiente modi illo minus, consectetur, eius provident fugit laboriosam dolores
+                reprehenderit, vero accusamus explicabo aliquid nemo sit ad! Ad eius totam quo est rem in fugiat veniam
+                perferendis.</li>
+            <li>Ratione libero aliquam nihil doloremque nobis at, maiores dicta molestias nostrum, laborum voluptatem
+                aperiam delectus voluptates sint ducimus ex, officia provident perspiciatis laboriosam odit! Possimus
+                quae inventore ratione architecto voluptatum.</li>
+            <li>Eaque atque cum esse dicta, nemo quidem tempora nobis possimus maiores deserunt magni ratione. A
+                distinctio eveniet reprehenderit sed ipsam, sequi odio illo eius ipsum, aliquam corporis. Nihil, dolor
+                nulla?</li>
+            <li>Commodi omnis laboriosam cumque eaque ratione accusamus, officiis ipsam inventore molestias id totam
+                atque nobis amet veritatis eius sint placeat quaerat beatae natus provident quod exercitationem nam
+                iusto autem. Alias.</li>
+            <li>Eius a, unde magni delectus numquam deleniti itaque in sed deserunt officia fugiat. Et nihil sunt
+                laborum est nesciunt, molestias atque veritatis fuga! Dicta cupiditate commodi placeat vel dolore quod!
+            </li>
+            <li>Ullam quas voluptatem laboriosam repellat, quaerat autem blanditiis, provident fuga odio debitis facilis
+                cum eum sed labore alias consectetur. Recusandae itaque modi aut repellat! Voluptate obcaecati numquam
+                vero officia sapiente.</li>
+        </ol>
+
+        <button id="boton" onclick=boton()>Botón</button>
+        <button id="cancelar" onclick=limpiar()>Cancelar</button>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
