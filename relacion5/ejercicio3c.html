@@ -12,7 +12,7 @@
     <script>
         function boton() {
             var texto = prompt("Introduzca el texto");
-            var posicion = document.getElementById("posicion").value;
+            var posicion = prompt("Posición");
             var lista = document.getElementById("lista");
             var introduzcaParrafo = document.createElement("li");
             introduzcaParrafo.innerHTML = texto;
@@ -73,8 +73,6 @@
                 vero officia sapiente.</li>
         </ol>
 
-        
-        Introduzca posición:<input type="number" id="posicion">
         <button id="boton" onclick=boton()>Botón</button>
         <button id="cancelar" onclick=limpiar()>Cancelar</button>
 
