@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Bienvenido al sistema comares</h1>
+
+    Introduzca su usuario y clave<br>
+    <form action="" method="">
+        usuario:<input type="text" name="usuario" id="usuario" value=""><br>
+        clave:<input type="password" name="contraseña" id="contraseña" value=""><br>
+
+        <button type="submit" name="enviar" onclick="validar()">Enviar</button>
+        <button type="submit" name="limpiar" onclick="limpiar()">Limpiar</button>
+    </form>
+    <script>
+        function validar(){
+
+            usuario = document.getElementById('usuario').value;
+            contraseña = document.getElementById('contraseña').value;
+
+            if(usuario == "admin" && contraseña == "1234"){
+                document.write("HOLA PUTO");
+            }
+        }
+
+        function limpiar(){
+
+            " " = document.getElementById('usuario'), value;
+            " " = document.getElementById('contraseña').value;
+
+        }
+
+        
+
+    
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
