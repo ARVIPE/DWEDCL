@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 20px;
+            height: 20px;
+            margin: 20px;
+        }
+        #red {
+            background-color: red;
+        }
+        #green {
+            background-color: green;
+        }
+        #yellow {
+            background-color: yellow;
+        }
+        #gray {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Evento "onMouseEnter" "onMouseOut" y fondos</h1>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="yellow"></div>
+    <div id="gray"></div>
+    <script>
+        document.querySelectorAll("div").forEach(div => {
+            div.addEventListener("mouseenter", () => {
+                document.body.style.backgroundColor = window.getComputedStyle(div).getPropertyValue("background-color");
+            });
+
+        });
+    </script>4
+</body>
+</html>
