@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Introduce un texto:</h1>
+    <textarea></textarea><br>
+    <button>Analizar</button>
+    <script>
+        document.querySelector("button").addEventListener("click", () => {
+            let textArea = document.querySelector("textarea");
+            if (textArea.value != "") {
+                let palabras = textArea.value.split(" ");
+                let ventaneEmergente = window.open("", "ventaneEmergente", "width=800, height=800");
+                ventaneEmergente.document.write("<h1>Información sobre el texto introducido</h1>" +
+                "<p>Número de palabras: " + palabras.length + "</p>" + 
+                "<p>Primera palabra: " + palabras[0] + "</p>" +
+                "<p>Última palabra: " + palabras[palabras.length-1] + "</p>" + 
+                "<p>Palabras colocadas al revés:</p>");
+                for (let i = palabras.length-1; i >= 0 ; i--) {
+                    ventaneEmergente.document.write(palabras[i] + " ");
+                }
+                ventaneEmergente.document.write("<p>Palabras ordenadas de la 'a' a la 'z':</p>");
+                var palabrasAsc = palabras.sort(function(a, b){return a.toLowerCase().localeCompare(b.toLowerCase());});
+                palabrasAsc.forEach(palabra => {
+                    ventaneEmergente.document.write(palabra + " ");
+                });
+                ventaneEmergente.document.write("<p>Palabras ordenadas de la 'z' a la 'a':</p>");
+                copiaPalabras = [...palabras];
+                var palabrasDes = copiaPalabras.sort(function(a, b){return a.toLowerCase().localeCompare(b.toLowerCase());}).reverse();
+                palabrasDes.forEach(palabra => {
+                    ventaneEmergente.document.write(palabra + " ");
+                });
+            }
+            else
+                alert("Introduzca texto");
+        });
+    </script>
+</body>
+</html>
