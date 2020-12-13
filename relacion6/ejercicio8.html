@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Conversión de distancia y peso</h1>
-    Km <input type="text" id="km"> <button id="btnDistancia">Convertir distancia</button> m: <input type="text" id="m"><br><br>
+    Km <input type="text" id="km"> <button id="btnDistancia">Convertir distancia</button> m: <input type="text"
+        id="m"><br><br>
     Kg: <input type="text" id="kg"> <button id="btnPeso">Convertir peso</button> g: <input type="text" id="g">
 
     <script>
-        var array = {"km":document.getElementById("km"), "m":document.getElementById("m"), 
-        "kg":document.getElementById("kg"), "g":document.getElementById("g")};
+        var array = {
+            "km": document.getElementById("km"), "m": document.getElementById("m"),
+            "kg": document.getElementById("kg"), "g": document.getElementById("g")
+        };
 
-        array["km"].addEventListener("focus", function(){ array["ms"].value = ""; });
-        array["m"].addEventListener("focus", function(){ array["km"].value = ""; });
-        array["kg"].addEventListener("focus", function(){ array["g"].value = ""; });
-        array["g"].addEventListener("focus", function(){ array["kg"].value = ""; });
+        array["km"].addEventListener("focus", function () { array["ms"].value = ""; });
+        array["m"].addEventListener("focus", function () { array["km"].value = ""; });
+        array["kg"].addEventListener("focus", function () { array["g"].value = ""; });
+        array["g"].addEventListener("focus", function () { array["kg"].value = ""; });
 
         document.getElementById("btnDistancia").addEventListener("click", () => {
             if (array["km"].value != "")
-                array["m"].value = array["km"].value/1000;
+                array["m"].value = array["km"].value / 1000;
             else if (array["m"].value != "")
-                    array["km"].value = array["m"].value*1000;
-                else
-                    alert("Introduzca una distancia");
+                array["km"].value = array["m"].value * 1000;
+            else
+                alert("Introduzca una distancia");
         });
 
         document.getElementById("btnPeso").addEventListener("click", () => {
             if (array["kg"].value != "")
-                array["g"].value = array["kg"].value/1000;
+                array["g"].value = array["kg"].value / 1000;
             else if (array["g"].value != "")
-                    array["kg"].value = array["g"].value*1000;
-                else
-                    alert("Introduzca un peso");
+                array["kg"].value = array["g"].value * 1000;
+            else
+                alert("Introduzca un peso");
         });
     </script>
 </body>
+
 </html>
