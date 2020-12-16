@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const factura = {
+            empresa: {
+                nif: "3111927M",
+                nombre: "Empresa",
+                direccion: "calle islas menores",
+                telefono: "957482912",
+            },
+            cliente: {
+                numCliente: "8",
+                dniCliente: "3158765L",
+                nombreCliente: "Manuel",
+                direccionCliente: "calle cliente",
+                cp: "14006",
+                ciudad: "Córdona",
+                provincia: "Córdoba"
+            },
+            productos:[["patatuelas", 3, 1], ["chicles", 1, 2], ["caramelos", 2, 3]],
+            pagoFactura: {
+                importeTotal : 0,
+                pago:"contado"
+            }
+        }
+
+        factura.calcularImporte = function(){
+            for(let i = 0; i < this.productos.length; i++){
+                this.pagoFactura.importeTotal += this.productos[i][1]*this.productos[i][2];
+            }
+        }
+        factura.imprimirPagoTotal = function(){
+            this.calcularImporte();
+            document.write('El total de la factura: ' + this.pagoFactura.importeTotal + ' al ' + this.pagoFactura.pago);
+        }
+        
+        factura.imprimirPagoTotal();
+    </script>
+</body>
+</html>

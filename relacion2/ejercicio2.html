@@ -10,10 +10,12 @@
     
         const numero = [];
         let suma = 0;
- 
-        for (i = 0; i < 10; i++){
+        
+        for (i = 0; i < 3; i++){
              numero[i] = prompt("Escribe un número");
-             suma+=numero;
+
+            suma+=parseInt(numero[i]);
+
         }
 
         document.write(suma);

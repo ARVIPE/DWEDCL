@@ -7,10 +7,26 @@
 </head>
 <body>
     <script>
+        class Circunferencia{
+            constructor(radio){
+                this.radio = radio;
+            }
+        
 
+            getArea(){
+                return Math.PI*Math.pow(this.radio, 2);
+            }
 
+            getLongitud(){
+                return 2*Math.PI*this.radio;
+            }
+        }
 
-
+        (function () {
+            redonda = new Circunferencia(3);
+            document.write("La circunferencia de " + redonda.radio + " cm tiene " + redonda.getArea() + " cm de area " + redonda.getLongitud() + " cm de perímetro")
+  
+        })();
 
 
 
