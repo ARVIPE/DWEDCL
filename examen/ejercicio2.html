@@ -70,61 +70,28 @@
 
         </tr>
     </table>
-
     <script>
-        $(function () {
-            $("#primero").validate({
-                debug: true,
-                rules: {
-                    apellidos1: {
-                        required: true,
-                        minlength: 5
-                    },
-                    nombre: {
-                        required: true,
-                        minlength: 3
-                    },
-                    direccion: {
-                        required: true,
-                        minlength: 5
-                    },
-                    sexo: {
-                        required: true,
-                    },
-                    edad: {
-                        required: true,
-                        digits: true
-                    },
-                    modulos: {
-                        required: true,
-                    }
-                },
-                messages: {
-                    apellidos1: {
-                        required: "El campo apellidos es obligatorio",
-                        minlength: "La longitud mínima es 5"
-                    },
-                    nombre: {
-                        required: "El campo nombre es obligatorio",
-                        minlength: "La longitud mínima es 3"
-                    },
-                    direccion: {
-                        required: "El campo dirección es obligatorio",
-                        minlength: "La longitud mínima es 5"
-                    },
-                    sexo: {
-                        required: "El campo sexo es obligatorio",
-                    },
-                    edad: {
-                        required: "El campo edad es obligatorio",
-                        digits: "Solo se permiten dígitos"
-                    },
-                    modulos: {
-                        required: "El campo modulos es obligatorio",
-                    }
-                }
+        document.querySelector("button").addEventListener("click", () => {
+            var selected = new Array();
+
+            $(document).ready(function () {
+
+                $("input:checkbox:checked").each(function () {
+                    console.log($(this).val());
+                });
+
             });
         });
+        window.onload = function () {
+            let elementos = document.getElementsByTagName("textarea");
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].addEventListener('click', function () {
+                    this.style.backgroundColor = "black";
+                    this.style.color = "white";
+                });
+            }
+        }
+     
     </script>
 </body>
 

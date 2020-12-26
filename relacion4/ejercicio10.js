@@ -17,31 +17,31 @@ class Pelicula {
 
     }
 
-    //metodo para validar ID
+    //metodo para validar ID 
     validarid(id) {
         if (/^([a-z]){2}([0-9]{7})$/.test(id)) {
-            document.write("id validado correctamente");
+            document.writeln("id validado correctamente");
 
         } else {
-            document.write("id no valido");
+            document.writeln("id no valido");
         }
     }
 
     //metodo para validar titulo
     validartitulo(titulo) {
         if (/^([a-z]){1,100}$/i.test(titulo)) {
-            document.write("titulo valido");
+            document.writeln("titulo valido");
         } else {
-            document.write("titulo no valido");
+            document.writeln("titulo no valido");
         }
     }
 
     //metodo para validar estreno
     validarestreno(estreno){
         if(/^([0-9]){4}$/.test(estreno)){
-            document.write("el año de estreno es valido");
+            document.writeln("el año de estreno es valido");
         }else{
-            document.write("el año de estreno no es valido");
+            document.writeln("el año de estreno no es valido");
         }
     }
 
@@ -52,7 +52,7 @@ class Pelicula {
         let escogido = 'Francia';       
 
         if(pais.includes(escogido)){
-            document.write("el país es válido");
+            document.writeln("el país es válido");
         }
     }
 
@@ -63,7 +63,7 @@ class Pelicula {
         var introducido = 'Action';
 
         if(genero.includes(introducido)){
-            document.write("el género es válido");
+            document.writeln("el género es válido");
         }
         
 

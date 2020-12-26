@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML-Formularios múltiples</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jqueryValidation.js"></script>
+    <style>
+        .error {
+            color: red;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <form id="primero">
+        Usuario: <input type="text" name="usuario"><br><br>
+        Contraseña: <input type="text" id="password" name="password"><br><br>
+        <p style="display: none;">
+            Contraseña:<input id="password2" type="text" name="password2"><br><br>
+        </p>
+        <button>Enviar</button>
+        <div>
+            <img alt="img" src="error.jpg" style="display: none;"/>
+        </div>
+
+
+    </form>
+
+    <script>
+        $(function () {
+            $("#primero").validate({
+                debug: true,
+                rules: {
+                    usuario: {
+                        required: true,
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8,
+                        maxlength: 10
+                    },
+                    password2: {
+                        required: true,
+                        minlength: 8,
+                        maxlength: 10
+                    }
+                },
+                messages: {
+                    usuario: {
+                        required: "El campo usuario es obligatorio"
+                    },
+                    password: {
+                        required: "El campo contraseña es obligatorio",
+                        minlength: "La longitud mínima es 8",
+                        maxlength: "La longitud máxima es 10"
+                    },
+                    password2: {
+                        required: "El campo contraseña es obligatorio",
+                        minlength: "La longitud mínima es 8",
+                        maxlength: "La longitud máxima es 10"
+                    }
+                }
+            });
+        });
+        document.querySelector("button").addEventListener("click", () => {
+            let password = document.querySelector("input");
+            var desaparecer = document.querySelectorAll("p");
+            if (password.value != "") {
+                desaparecer.forEach(element => {
+                    if (element.getAttribute("style") == "display: none;") {
+                        element.setAttribute("style", "display: block;");
+                        alert("Introduzca contraseña de nuevo");
+                    } else {
+                        if (desaparecer.values != "") {
+                            if (($('input:text[name=password]').val()) == ($('input:text[name=password2]').val())) {
+                                document.write("Las contraseñas coinciden");
+                            } else {
+                                var imagen = document.querySelectorAll("img");
+                                imagen.forEach(element => {
+                                element.setAttribute("style", "display: block;");
+                                });
+
+                            }
+                        }
+                    }
+
+                });
+            }
+
+
+
+
+
+        });
+
+    </script>
+</body>
+
+</html>
