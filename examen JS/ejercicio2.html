@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>REPARACIONES COMARES</title>
+    <style>
+        input[type=number] {
+            width: 50px;
+        }
+
+        .color {
+            color: white;
+        }
+
+        .error {
+            color: red;
+
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jqueryValidation.js"></script>
+</head>
+
+<body>
+    <h1>Centro de Reparaciones IES Marqués de Comares</h1>
+    <table>
+        <tr>
+            <td>
+                <h2>Solicutud de Reparación</h2>
+                <form id="formulario1" name="formulario1" action="#" method="post">
+                    <label for="apellido1">Apellidos: </label>
+                    <input type="text" name="apellido1" id="apellido1" size="40" maxlength="40">
+                    <label for="nombre1">Nombre: </label>
+                    <input type="text" name="nombre1" id="nombre1">
+                    <br /> <br />
+                    <label for="telefono">Teléfono: </label>
+                    <input type="text" name="telefono" id="telefono" size="10" maxlength="9">
+                    <label for="numserire">Nº serie equipo: </label>
+                    <input type="text" name="numserie" id="numserie" size="30" maxlength="30">
+                    <br /> <br />
+                    <p style="display: none;"id="marcaymodelo"></p>
+
+                    <label for="clasereparacion">Tipo de reparación: </label>
+                    <input type="radio" name="clasereparacion" value="sobremesa"> Ordenador de sobremesa
+                    <input type="radio" name="clasereparacion" value="portatil"> Ordenador portátil
+                    <input type="radio" name="clasereparacion" value="immpresora"> Impresora
+                    <br /> <br />
+                    <label for="obtencion1">Antigüedad: </label>
+                    <input type="number" name="antiguedad" id="antiguedad">
+                    <br /> <br />
+                    <label for="select1">Tipo avería: </label>
+                    <select name="tipoaveria" id="tipoaveria">
+                        <option>hardware</option>
+                        <option>software</option>
+                    </select>
+                    <br /> <br />
+                    <label for="sintomas">Síntoms avería: </label><br>
+                    <input type="checkbox" name="check" value="nohacenada" id="nohacenada"> No hace nada<br>
+                    <input type="checkbox" name="check" value="pitaynoenciende" id="pitaynoenciende"> Pita y
+                    no enciende<br>
+                    <input type="checkbox" name="check" value="arrancayseapaga" id="arrancayseapaga"> Arranca
+                    pero al rato se apaga<br>
+                    <input type="checkbox" name="check" value="novasistemaoperativo" id="novasistemaoperativo"> El
+                    sistema operativo no llega a arrancar<br>
+                    <input type="checkbox" name="check" value="pantallazoazul" id="pantallazoazul"> Pantallazo
+                    azul<br>
+                    <br /> <br />
+                    <label for="observaciones1">Observaaciones: </label><br>
+                    <textarea name="observaciones1" id="observaciones1" rows="10"
+                        cols="50">Indique si tiene alguna observación que crea importante que debamos conocer...</textarea>
+                    <br /> <br />
+                    <button>Enviar</button>
+                    <input type="reset" id="Reset1" value="Limpiar">
+                </form>
+            </td>
+
+
+        </tr>
+    </table>
+    <script>
+        document.querySelector("button").addEventListener("click", () => {
+            var selected = new Array();
+
+            $(document).ready(function () {
+
+                $("input:checkbox:checked").each(function () {
+                    alert($(this).val());
+                });
+
+            });
+        });
+
+        $('input[name=checkbox]').change(function () {
+            if ($(this).is(':checked')) {
+                console.log("Checkbox is checked..")
+            } else {
+                console.log("Checkbox is not checked..")
+            }
+        });
+
+        window.onload = function () {
+            let elementos = document.getElementsByTagName("textarea");
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].addEventListener('click', function () {
+                    this.style.backgroundColor = "black";
+                    this.style.color = "white";
+                });
+            }
+        }
+
+        $(function () {
+            $("#formulario1").validate({
+                debug: true,
+                rules: {
+                    nombre1: {
+                        required: true,
+                    },
+                    apellido1: {
+                        required: true,
+                    },
+                    telefono: {
+                        required: true,
+                    },
+                    numserie: {
+                        required: true,
+                    },
+                    clasereparacion: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    nombre1: {
+                        required: "El campo usuario es obligatorio"
+                    },
+                    apellido1: {
+                        required: "El campo apellido es obligatorio"
+                    },
+                    telefono: {
+                        required: "El campo teléfono es obligatorio"
+                    },
+                    numserie: {
+                        required: "El campo número de serie es obligatorio"
+                    },
+                    clasereparacion: {
+                        required: "El campo clase de reparación es obligatorio"
+                    }
+                }
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>

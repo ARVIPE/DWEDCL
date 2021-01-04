@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>REPARACIONES COMARES</title>
+    <title>HTML-Formularios múltiples</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jqueryValidation.js"></script>
+
     <style>
         input[type=number] {
             width: 50px;
@@ -11,62 +15,78 @@
         .color{
             color: white;
         }
+        .error{
+            color: red;
+        }
     </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="jqueryValidation.js"></script>
 </head>
 
 <body>
-    <h1>Centro de Reparaciones IES Marqués de Comares</h1>
+    <h1>Centro Educativo I.E.S. Marqués de Comares</h1>
     <table>
         <tr>
             <td width="800">
-                <h2>Solicutud de Reparación</h2>
-                <form name="formulario1" action="#" method="get">
-                    <label for="apellido1">Apellidos: </label>
-                    <input type="text" name="apellido1" id="apellido1" size="40" maxlength="40">
-                    <label for="nombre1">Nombre: </label>
-                    <input type="text" name="nombre1" id="nombre1">
-                    <br /> <br />
-                    <label for="telefono">Teléfono: </label>
-                    <input type="text" name="telefono" id="telefono" size="10" maxlength="9">
-                    <label for="numserire">Nº serie equipo: </label>
-                    <input type="text" name="numserie" id="numserie" size="30" maxlength="30">
-                    <br /> <br />
-                    <label for="clasereparacion">Tipo de reparación: </label>
-                    <input type="radio" name="clasereparacion" value="sobremesa"> Ordenador de sobremesa
-                    <input type="radio" name="clasereparacion" value="portatil"> Ordenador portátil
-                    <input type="radio" name="clasereparacion" value="immpresora"> Impresora
-                    <br /> <br />
-                    <label for="obtencion1">Antigüedad: </label>
-                    <input type="number" name="antiguedad" id="antiguedad">
-                    <br /> <br />
-                    <label for="select1">Tipo avería: </label>
-                    <select name="tipoaveria" id="tipoaveria">
-                        <option>hardware</option>
-                        <option>software</option>
-                    </select>
-                    <br /> <br />
-                    <label for="sintomas">Síntoms avería: </label><br>
-                    <input type="checkbox" name="check" value="nohacenada" id="nohacenada"> No hace nada<br>
-                    <input type="checkbox" name="check" value="pitaynoenciende" id="pitaynoenciende"> Pita y
-                    no enciende<br>
-                    <input type="checkbox" name="check" value="arrancayseapaga" id="arrancayseapaga"> Arranca
-                    pero al rato se apaga<br>
-                    <input type="checkbox" name="check" value="novasistemaoperativo"
-                        id="novasistemaoperativo"> El sistema operativo no llega a arrancar<br>
-                    <input type="checkbox" name="check" value="pantallazoazul" id="pantallazoazul"> Pantallazo
-                    azul<br>
-                    <br /> <br />
-                    <label for="observaciones1">Observaaciones: </label><br>
-                    <textarea name="observaciones1" id="observaciones1" rows="10"
-                        cols="50">Indique si tiene alguna observación que crea importante que debamos conocer...</textarea>
-                    <br /> <br />
-                    <button>Enviar</button>
-                    <input type="reset" id="Reset1" value="Limpiar">
+                <h3>Matriculación en el ciclo de grado medio SMR</h3>
+                <form id="primero">
+                    Apellidos: <input type="text" name="apellidos"><br><br>
+                    Nombre: <input type="text" name="nombre"><br><br>
+                    Dirección: <input type="text" name="direccion"><br><br>
+                    Sexo: <input type="radio" name="sexo" value="h"> Hombre <input type="radio" name="sexo" value="m">
+                    Mujer<br><br>
+                    Edad: <input type="number" name="edad"><br><br>
+                    Curso: <select name="curso">
+                        <option value="1">1º</option>
+                        <option value="2">2º</option>
+                    </select><br><br>
+                    Módulos en los que se matricula:<br>
+                    <input type="checkbox" name="modulos"> Entornos de desarrollo<br>
+                    <input type="checkbox" name="modulos"> Bases de datos<br>
+                    <input type="checkbox" name="modulos"> Programación<br>
+                    <input type="checkbox" name="modulos"> Implatación de sistemas operativos<br>
+                    <input type="checkbox" name="modulos"> Formación y orientación laboral<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Cliente<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Servidor<br>
+                    <input type="checkbox" name="modulos"> Despliegue de aplicaciones Web<br>
+                    <input type="checkbox" name="modulos"> Desarrollo de interfaces Web<br>
+                    <input type="checkbox" name="modulos"> Empresa e iniciativa emprendedora<br><br>
+                    Observaciones:<br>
+                    <textarea name="observaciones"></textarea><br>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Restablecer</button>
                 </form>
             </td>
-
+            <td width="800">
+                <h3>Matriculación en el ciclo de grado superior DAW</h3>
+                <form id="segundo">
+                    Apellidos: <input type="text" name="apellidos"><br><br>
+                    Nombre: <input type="text" name="nombre"><br><br>
+                    Dirección: <input type="text" name="direccion"><br><br>
+                    Sexo: <input type="radio" name="sexo" value="h"> Hombre <input type="radio" name="sexo" value="m">
+                    Mujer<br><br>
+                    Edad: <input type="number" name="edad"><br><br>
+                    Curso: <select name="curso">
+                        <option value="1">1º</option>
+                        <option value="2">2º</option>
+                    </select><br><br>
+                    Módulos en los que se matricula:<br>
+                    <input type="checkbox" name="modulos"> Entornos de desarrollo<br>
+                    <input type="checkbox" name="modulos"> Bases de datos<br>
+                    <input type="checkbox" name="modulos"> Programación<br>
+                    <input type="checkbox" name="modulos"> Implatación de sistemas operativos<br>
+                    <input type="checkbox" name="modulos"> Formación y orientación laboral<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Cliente<br>
+                    <input type="checkbox" name="modulos"> Desarrollo Web en Entorno Servidor<br>
+                    <input type="checkbox" name="modulos"> Despliegue de aplicaciones Web<br>
+                    <input type="checkbox" name="modulos"> Desarrollo de interfaces Web<br>
+                    <input type="checkbox" name="modulos"> Empresa e iniciativa emprendedora<br><br>
+                    Observaciones:<br>
+                    <textarea name="observaciones"></textarea><br>
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Restablecer</button>
+                </form>
+            </td>
 
         </tr>
     </table>
@@ -76,7 +96,7 @@
             $("#primero").validate({
                 debug: true,
                 rules: {
-                    apellidos1: {
+                    apellidos: {
                         required: true,
                         minlength: 5
                     },
@@ -100,7 +120,58 @@
                     }
                 },
                 messages: {
-                    apellidos1: {
+                    apellidos: {
+                        required: "El campo apellidos es obligatorio",
+                        minlength: "La longitud mínima es 5"
+                    },
+                    nombre: {
+                        required: "El campo nombre es obligatorio",
+                        minlength: "La longitud mínima es 3"
+                    },
+                    direccion: {
+                        required: "El campo dirección es obligatorio",
+                        minlength: "La longitud mínima es 5"
+                    },
+                    sexo: {
+                        required: "El campo sexo es obligatorio",
+                    },
+                    edad: {
+                        required: "El campo edad es obligatorio",
+                        digits: "Solo se permiten dígitos"
+                    },
+                    modulos: {
+                        required: "El campo modulos es obligatorio",
+                    }
+                }
+            });
+            $("#segundo").validate({
+                debug: true,
+                rules: {
+                    apellidos: {
+                        required: true,
+                        minlength: 5
+                    },
+                    nombre: {
+                        required: true,
+                        minlength: 3
+                    },
+                    direccion: {
+                        required: true,
+                        minlength: 5
+                    },
+                    sexo: {
+                        required: true,
+                    },
+                    edad: {
+                        required: true,
+                        digits: true
+                    },
+                    modulos: {
+                        required: true,
+                    }
+                },
+                messages: {
+                    apellidos: {
                         required: "El campo apellidos es obligatorio",
                         minlength: "La longitud mínima es 5"
                     },
@@ -125,6 +196,9 @@
                 }
             });
         });
+
+        $("#primero").children().focus(function () { $("#segundo").children().prop("disabled", true); });
+        $("#segundo").children().focus(function () { $("#primero").children().prop("disabled", true); });
     </script>
 </body>
 
