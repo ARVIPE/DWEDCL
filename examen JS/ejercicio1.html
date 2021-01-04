@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML-Formularios múltiples</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jqueryValidation.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+
+
+
+        #myAnimation {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="primero">
+        Usuario: <input type="text" name="usuario"><br><br>
+        Contraseña:<input type="text" name="password" id="input">
+        <p style="display: none;">
+            Introduzca contraseña de nuevo:<input type="text" id="input2" name="password2"><br><br>
+        </p>
+        <button id="myBtn" disabled>Enviar</button>
+        <div>
+            <img id="myAnimation" alt="img" src="error.jpg" style="display: none;" />
+        </div>
+    </form>
+
+    <script>
+        $(function () {
+            $("#primero").validate({
+                debug: true,
+                rules: {
+                    usuario: {
+                        required: true,
+                    },
+                    password: {
+                        required: true,
+                        minlength: 8,
+                        maxlength: 10
+                    },
+                    password2: {
+                        required: true,
+                        minlength: 8,
+                        maxlength: 10
+                    }
+                },
+                messages: {
+                    usuario: {
+                        required: "El campo usuario es obligatorio"
+                    },
+                    password: {
+                        required: "El campo contraseña es obligatorio",
+                        minlength: "Introduzca como minimo 8 caracteres",
+                        maxlength: "Introduzca como máximo 10 caracteres"
+                    },
+                    password2: {
+                        required: "El campo contraseña es obligatorio",
+                        minlength: "Introduzca como minimo 8 caracteres",
+                        maxlength: "Introduzca como máximo 10 caracteres"
+
+                    }
+                }
+            });
+        });
+
+
+        let val = document.querySelector("#input");
+        val.addEventListener('input', () => {
+            let vaLength = document.querySelector("#input").value
+            if (vaLength.length >= 8) {
+                console.log(`the input has more than 8 character...`);
+                let password = document.querySelector("#input");
+                var desaparecer = document.querySelectorAll("p");
+                var boton = document.querySelectorAll("button");
+                if (password.value != "") {
+                    desaparecer.forEach(element => {
+                        if (element.getAttribute("style") == "display: none;") {
+                            element.setAttribute("style", "display: block;");
+                        }
+
+                    });
+                }
+
+            }
+        })
+
+        let val2 = document.querySelector("#input2");
+        val2.addEventListener('input', () => {
+            let vaLength2 = document.querySelector("#input2").value
+            if (vaLength2.length >= 8) {
+                document.getElementById("myBtn").disabled = false;
+                val2.setAttribute("password2", "8");
+                console.log("has min 8 of length")
+            } else {
+                document.getElementById("myBtn").disabled = true;
+            }
+        });
+
+        var boton1 = document.getElementById("myBtn");
+        boton1.addEventListener('click', () => {
+            console.log("click");
+            var align = val2.getAttribute("password2");
+            if (align == "8") {
+                if (($('input:text[name=password]').val()) == ($('input:text[name=password2]').val())) {
+                    document.write("Las contraseñas coinciden");
+                } else {
+                    var imagen = document.querySelectorAll("img");
+                    imagen.forEach(element => {
+                        element.setAttribute("style", "display: block;");
+
+                        var elem = document.getElementById("myAnimation");
+                        var pos = 0;
+                        var width = 30;
+                        var id = setInterval(frame, 10);
+                        function frame() {
+                            if (pos == 350) {
+                                clearInterval(id);
+                            } else {
+                                pos++;
+                                width++;
+                                elem.style.width = width + 'px';
+                                elem.style.height = width + 'px';
+                                elem.style.left = pos + 'px';
+                            }
+                        }
+                    });
+
+                }
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>
