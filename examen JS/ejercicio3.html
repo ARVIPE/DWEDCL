@@ -11,31 +11,15 @@
 
         class carta {
 
-            constructor(nombreEmpresa, direccion, telefono, nif, numCliente, dniCliente, nombreCliente,
-                domicilio, cp, ciudad, provincia, listaProductos, importeTotal, pago) {
-
-                this.nombreEmpresa = nombreEmpresa;
-                this.direccion = direccion;
-                this.telefono = telefono;
-                this.nif = nif;
-                this.numCliente = numCliente;
-                this.dniCliente = dniCliente;
-                this.nombreCliente = nombreCliente;
-                this.domicilio = domicilio;
-                this.cp = cp;
-                this.ciudad = ciudad;
-                this.provincia = provincia; 
-                this.listaProductos = listaProductos;
-                this.importeTotal = 0;
-                this.pago = pago;
+            constructor(palo, valor) {
+               this.palo = palo;
+               this.valor = valor;
             }
 
             calculo(listaProductos) {
                
                 for(let i= 0; i < listaProductos.length; i++){
-                    
                     this.importeTotal += listaProductos[i][1] * listaProductos[i][2];
-                   
                 }
                 document.write("El total de la factura es: " + this.importeTotal + " y el pago es con: " + this.pago);
             }
