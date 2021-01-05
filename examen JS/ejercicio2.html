@@ -40,23 +40,27 @@
                     <label for="numserire">Nº serie equipo: </label>
                     <input type="text" name="numserie" id="numserie" size="30" maxlength="30">
                     <br /> <br />
-                    <p style="display: none;"id="marcaymodelo"></p>
-
                     <label for="clasereparacion">Tipo de reparación: </label>
                     <input type="radio" name="clasereparacion" value="sobremesa"> Ordenador de sobremesa
-                    <input type="radio" name="clasereparacion" value="portatil"> Ordenador portátil
+                    <input type="radio" name="clasereparacion" id="portatil" value="portatil"> Ordenador portátil
                     <input type="radio" name="clasereparacion" value="immpresora"> Impresora
                     <br /> <br />
+                    <p style="display: none;"id="marcaymodelo">
+                        <label for="marca">Marca: </label>
+                    <input type="text" name="marca" id="marca" >
+                    <label for="modelo">Modelo: </label>
+                    <input type="text" name="modelo" id="modelo">
+                    </p>
                     <label for="obtencion1">Antigüedad: </label>
                     <input type="number" name="antiguedad" id="antiguedad">
                     <br /> <br />
                     <label for="select1">Tipo avería: </label>
-                    <select name="tipoaveria" id="tipoaveria">
+                    <select name="tipoaveria" id="tipoaveria"> 
                         <option>hardware</option>
                         <option>software</option>
                     </select>
                     <br /> <br />
-                    <label for="sintomas">Síntoms avería: </label><br>
+                    <label for="sintomas">Síntomas avería: </label><br>
                     <input type="checkbox" name="check" value="nohacenada" id="nohacenada"> No hace nada<br>
                     <input type="checkbox" name="check" value="pitaynoenciende" id="pitaynoenciende"> Pita y
                     no enciende<br>
@@ -67,7 +71,7 @@
                     <input type="checkbox" name="check" value="pantallazoazul" id="pantallazoazul"> Pantallazo
                     azul<br>
                     <br /> <br />
-                    <label for="observaciones1">Observaaciones: </label><br>
+                    <label for="observaciones1">Observaciones: </label><br>
                     <textarea name="observaciones1" id="observaciones1" rows="10"
                         cols="50">Indique si tiene alguna observación que crea importante que debamos conocer...</textarea>
                     <br /> <br />
@@ -75,8 +79,6 @@
                     <input type="reset" id="Reset1" value="Limpiar">
                 </form>
             </td>
-
-
         </tr>
     </table>
     <script>
@@ -149,6 +151,18 @@
                 }
 
             });
+        });
+
+        var portatil = document.getElementById("portatil");
+        portatil.addEventListener('click', () => {
+            var desaparecer = document.querySelectorAll("p");
+            desaparecer.forEach(element => {
+                        if (element.getAttribute("style") == "display: none;") {
+                            element.setAttribute("style", "display: block;");
+                        }
+
+                    });
+
         });
 
     </script>

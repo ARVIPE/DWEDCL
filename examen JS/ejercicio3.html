@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <script>
+
+        class carta {
+
+            constructor(nombreEmpresa, direccion, telefono, nif, numCliente, dniCliente, nombreCliente,
+                domicilio, cp, ciudad, provincia, listaProductos, importeTotal, pago) {
+
+                this.nombreEmpresa = nombreEmpresa;
+                this.direccion = direccion;
+                this.telefono = telefono;
+                this.nif = nif;
+                this.numCliente = numCliente;
+                this.dniCliente = dniCliente;
+                this.nombreCliente = nombreCliente;
+                this.domicilio = domicilio;
+                this.cp = cp;
+                this.ciudad = ciudad;
+                this.provincia = provincia; 
+                this.listaProductos = listaProductos;
+                this.importeTotal = 0;
+                this.pago = pago;
+            }
+
+            calculo(listaProductos) {
+               
+                for(let i= 0; i < listaProductos.length; i++){
+                    
+                    this.importeTotal += listaProductos[i][1] * listaProductos[i][2];
+                   
+                }
+                document.write("El total de la factura es: " + this.importeTotal + " y el pago es con: " + this.pago);
+            }
+        }
+        var productos = [["bicicleta", 400, 1],["moto", 3500, 1]];
+        
+        const factura1 = new factura("Empresa", "Córdoba", "957582912", "4382", "22", "643267", "Manuel", "Calle Mallorca",
+            "14960", "Lucena", "Cordoba", productos, 0, "tarjeta");
+
+        factura1.calculo(productos);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
